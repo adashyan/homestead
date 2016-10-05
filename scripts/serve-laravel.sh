@@ -7,6 +7,9 @@ PATH_KEY="${PATH_SSL}/${1}.key"
 PATH_CSR="${PATH_SSL}/${1}.csr"
 PATH_CRT="${PATH_SSL}/${1}.crt"
 
+# custom
+DOCUMENT_ROOT=$(sed -e 's/public//g' <<<"$2")
+
 if [ ! -f $PATH_KEY ] || [ ! -f $PATH_CSR ] || [ ! -f $PATH_CRT ]
 then
   openssl genrsa -out "$PATH_KEY" 2048 2>/dev/null
@@ -28,7 +31,7 @@ block="server {
         try_files \$uri \$uri/ /index.php?\$query_string;
     }
     # include specific conf files from the root
-    include $2/*.conf;
+    include ${DOCUMENT_ROOT}*.conf;
     
     location = /favicon.ico { access_log off; log_not_found off; }
     location = /robots.txt  { access_log off; log_not_found off; }
