@@ -26,9 +26,10 @@ block="server {
 
     location / {
         try_files \$uri \$uri/ /index.php?\$query_string;
+        fastcgi_param   APPLICATION_ENV development;
     }
-
-    fastcgi_param   APPLICATION_ENV  production;
+    # include specific conf files from the root
+    include $2/*.conf;
     
     location = /favicon.ico { access_log off; log_not_found off; }
     location = /robots.txt  { access_log off; log_not_found off; }
