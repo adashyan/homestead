@@ -28,6 +28,8 @@ block="server {
         try_files \$uri \$uri/ /index.php?\$query_string;
     }
 
+    fastcgi_param   APPLICATION_ENV  production;
+    
     location = /favicon.ico { access_log off; log_not_found off; }
     location = /robots.txt  { access_log off; log_not_found off; }
 
