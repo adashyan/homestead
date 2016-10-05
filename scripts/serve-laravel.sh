@@ -26,7 +26,6 @@ block="server {
 
     location / {
         try_files \$uri \$uri/ /index.php?\$query_string;
-        fastcgi_param   APPLICATION_ENV development;
     }
     # include specific conf files from the root
     include $2/*.conf;
@@ -54,6 +53,9 @@ block="server {
         fastcgi_connect_timeout 300;
         fastcgi_send_timeout 300;
         fastcgi_read_timeout 300;
+
+        #custom
+        fastcgi_param APPLICATION_ENV "development";
     }
 
     location ~ /\.ht {
