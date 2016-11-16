@@ -13,6 +13,7 @@ class Homestead
     config.ssh.forward_agent = true
 
     # Configure The Box
+    config.vm.define settings["name"] ||= "homestead-7"
     config.vm.box = settings["box"] ||= "laravel/homestead"
     config.vm.box_version = settings["version"] ||= ">= 0.4.0"
     config.vm.hostname = settings["hostname"] ||= "homestead"
@@ -244,7 +245,9 @@ class Homestead
 
     # Update Composer On Every Provision
     config.vm.provision "shell" do |s|
-      s.inline = "/usr/local/bin/composer self-update"
+      s.name = "Update Composer"
+      s.inline = "sudo /usr/local/bin/composer self-update && sudo chown -R vagrant:vagrant /home/vagrant/.composer/"
+      s.privileged = false
     end
 
     # Configure Blackfire.io
