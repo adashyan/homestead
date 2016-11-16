@@ -201,6 +201,12 @@ class Homestead
       end
     end
 
+    # Install php-redis extension If Necessary
+    if settings.has_key?("php-redis") && settings["php-redis"]
+      config.vm.provision "shell" do |s|
+        s.path = scriptDir + "/install-php-redis.sh"
+      end
+    end
 
     # Configure All Of The Configured Databases
     if settings.has_key?("databases")
