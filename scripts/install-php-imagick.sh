@@ -9,8 +9,8 @@ fi
 touch /home/vagrant/.php-imagick
 
 
-sudo apt-get update
-sudo apt-get install php7.0-imagick
+sudo apt-get update -y
+sudo apt-get install php7.0-imagick -y
 
 service php7.0-fpm restart
 service nginx restart
