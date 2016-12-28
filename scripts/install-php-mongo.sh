@@ -1,17 +1,17 @@
 ##!/usr/bin/env bash
 ## Check If php-redis Has Been Installed
 #
-#if [ -f /home/vagrant/.php-mongo ]
-#then
-#   echo "php-mongo already installed."
-#   exit 0
-#fi
-#
-#touch /home/vagrant/.php-mongo
-#
-#yes no | sudo pecl install mongo
-#
-#
+if [ -f /home/vagrant/.php-mongo ]
+then
+   echo "php-mongo already installed."
+   exit 0
+fi
+
+touch /home/vagrant/.php-mongo
+
+yes no | sudo pecl install mongo
+
+
 #extension=mongo.so
 #
 #touch /etc/php5/mods-available/mongo.ini
