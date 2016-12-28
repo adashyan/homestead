@@ -1,16 +1,16 @@
-#!/usr/bin/env bash
-# Check If php-mongo Has Been Installed
-
-if [ -f /home/vagrant/.php-mongo ]
-then
-   echo "php-mongo already installed."
-   exit 0
-fi
-
-touch /home/vagrant/.php-mongo
-
-echo "installing php mongodb driver"
-yes no | sudo pecl install mongo
+##!/usr/bin/env bash
+## Check If php-mongo Has Been Installed
+#
+#if [ -f /home/vagrant/.php-mongo ]
+#then
+#   echo "php-mongo already installed."
+#   exit 0
+#fi
+#
+#touch /home/vagrant/.php-mongo
+#
+#echo "Installing php mongodb driver"
+#yes no | sudo pecl install mongo
 
 #touch /etc/php5/mods-available/mongo.ini
 #echo "extension=mongo.so" > /etc/php5/mods-available/mongo.ini
