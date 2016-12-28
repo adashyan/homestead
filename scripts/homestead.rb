@@ -149,6 +149,13 @@ class Homestead
 
     end
 
+    # Install php-mongo extension If Necessary
+    if settings.has_key?("php-mongo") && settings["php-mongo"]
+      config.vm.provision "shell" do |s|
+        s.path = scriptDir + "/install-php-mongo.sh"
+      end
+    end
+
     # Configure All Of The Configured Databases
     if settings.has_key?("databases")
         settings["databases"].each do |db|
