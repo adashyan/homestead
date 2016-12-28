@@ -17,7 +17,8 @@ extension=mongo.so
 touch /etc/php5/mods-available/mongo.ini
 echo "extension=mongo.so" > /etc/php5/mods-available/mongo.ini
 
-ln -sf /etc/php5/mods-available/redis.ini /etc/php5/fpm/conf.d/20-mongo.ini
-ln -sf /etc/php5/mods-available/redis.ini /etc/php5/cli/conf.d/20-mongo.ini
+ln -sf /etc/php5/mods-available/mongo.ini /etc/php5/fpm/conf.d/20-mongo.ini
+ln -sf /etc/php5/mods-available/mongo.ini /etc/php5/cli/conf.d/20-mongo.ini
 
-service php5-fpm restart
+sudo /etc/init.d/nginx restart
+sudo /etc/init.d/php5-fpm restart
