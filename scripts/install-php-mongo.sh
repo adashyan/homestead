@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Check If php-redis Has Been Installed
+# Check If php-mongo Has Been Installed
 
 if [ -f /home/vagrant/.php-mongo ]
 then
@@ -9,11 +9,9 @@ fi
 
 touch /home/vagrant/.php-mongo
 
+echo "installing php mongodb driver"
 yes no | sudo pecl install mongo
 
-
-#extension=mongo.so
-#
 #touch /etc/php5/mods-available/mongo.ini
 #echo "extension=mongo.so" > /etc/php5/mods-available/mongo.ini
 #
