@@ -1,6 +1,6 @@
-##!/usr/bin/env bash
-## Check If php-redis Has Been Installed
-#
+#!/usr/bin/env bash
+# Check If php-redis Has Been Installed
+
 if [ -f /home/vagrant/.php-mongo ]
 then
    echo "php-mongo already installed."
