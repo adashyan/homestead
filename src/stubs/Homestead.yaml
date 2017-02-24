@@ -3,8 +3,9 @@ ip: "192.168.10.10"
 memory: 2048
 cpus: 1
 provider: virtualbox
-php-redis: true
-php-imagick: true
+#php-redis: true
+#php-imagick: true
+version: "~> 0.5.0"
 
 authorize: ~/.ssh/id_rsa.pub
 
