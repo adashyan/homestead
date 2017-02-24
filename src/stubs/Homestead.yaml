@@ -13,12 +13,12 @@ keys:
     - ~/.ssh/id_rsa
 
 folders:
-    - map: ~/Code
-      to: /home/vagrant/Code
+    - map: ~/Sites/cms
+      to: /home/vagrant/Sites/cms
 
 sites:
-    - map: homestead.app
-      to: /home/vagrant/Code/Laravel/public
+    - map: cms.dev
+      to: /home/vagrant/Sites/cms/public
 
 databases:
     - homestead
