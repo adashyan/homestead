@@ -19,7 +19,7 @@ block="server {
         try_files \$uri \$uri/ /index.php?\$query_string;
     }
     # include specific conf files from the root
-    include $2*.conf;
+    include $2/*.conf;
 
     location = /favicon.ico { access_log off; log_not_found off; }
     location = /robots.txt  { access_log off; log_not_found off; }
