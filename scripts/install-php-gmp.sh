@@ -10,7 +10,7 @@ touch /home/vagrant/.php-gmp
 
 
 sudo apt-get update -y
-sudo apt-get install php7.0-gmp -y
+sudo DEBIAN_FRONTEND=noninteractive apt-get -o Dpkg::Options::="--force-confdef" -y install php7.0-gmp
 
 service php7.0-fpm restart
 service nginx restart
