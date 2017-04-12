@@ -216,7 +216,7 @@ class Homestead
     end
 
     # Install php-imagick extension If Necessary
-    if settings.has_key?("php-gmp") && settings["php-gmp"]
+    if !settings.has_key?("php-gmp") || settings["php-gmp"]
       config.vm.provision "shell" do |s|
         s.path = scriptDir + "/install-php-gmp.sh"
       end

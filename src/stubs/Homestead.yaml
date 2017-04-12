@@ -5,7 +5,7 @@ cpus: 1
 provider: virtualbox
 #php-redis: true
 #php-imagick: true
-php-gmp: true
+php-gmp: false
 version: "~> 0.5.0"
 
 authorize: ~/.ssh/id_rsa.pub
