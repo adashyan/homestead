@@ -215,6 +215,13 @@ class Homestead
       end
     end
 
+    # Install php-imagick extension If Necessary
+    if settings.has_key?("php-gmp") && settings["php-gmp"]
+      config.vm.provision "shell" do |s|
+        s.path = scriptDir + "/install-php-gmp.sh"
+      end
+    end
+
     # Configure All Of The Configured Databases
     if settings.has_key?("databases")
         settings["databases"].each do |db|
