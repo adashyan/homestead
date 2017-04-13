@@ -17,3 +17,9 @@ xdebug.profiler_enable=0
 xdebug.profiler_enable_trigger = 1;
 xdebug.profiler_output_name = cachegrind.out.%p.%t
 xdebug.profiler_output_dir = /home/vagrant/Sites/cachegrind" >> "/etc/php/7.0/fpm/conf.d/20-xdebug.ini"
+
+
+touch /home/vagrant/.bash_aliases
+
+echo "alias test=\"vendor/bin/phpunit\"" >> "/home/vagrant/.bash_aliases"
+echo "alias test=\"vendor/bin/phpunit --filter\"" >> "/home/vagrant/.bash_aliases"
