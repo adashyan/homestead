@@ -22,4 +22,4 @@ xdebug.profiler_output_dir = /home/vagrant/Sites/cachegrind" >> "/etc/php/7.0/fp
 touch /home/vagrant/.bash_aliases
 
 echo "alias test=\"vendor/bin/phpunit\"" >> "/home/vagrant/.bash_aliases"
-echo "alias test=\"vendor/bin/phpunit --filter\"" >> "/home/vagrant/.bash_aliases"
+echo "alias pf=\"vendor/bin/phpunit --filter\"" >> "/home/vagrant/.bash_aliases"
