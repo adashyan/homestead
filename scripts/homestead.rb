@@ -222,6 +222,13 @@ class Homestead
       end
     end
 
+    # Install php-imagick extension If Necessary
+    if !settings.has_key?("custom-config") || settings["custom-config"]
+      config.vm.provision "shell" do |s|
+        s.path = scriptDir + "/custom-config.sh"
+      end
+    end
+
     # Configure All Of The Configured Databases
     if settings.has_key?("databases")
         settings["databases"].each do |db|
