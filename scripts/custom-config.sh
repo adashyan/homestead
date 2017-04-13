@@ -23,3 +23,4 @@ touch /home/vagrant/.bash_aliases
 
 echo "alias test=\"vendor/bin/phpunit\"" >> "/home/vagrant/.bash_aliases"
 echo "alias pf=\"vendor/bin/phpunit --filter\"" >> "/home/vagrant/.bash_aliases"
+echo "alias scd=\"~/Sites/cms\"" >> "/home/vagrant/.bash_aliases"
