@@ -9,7 +9,7 @@ fi
 touch /home/vagrant/.php-redis
 
 cd /tmp
-curl -O https://github.com/phpredis/phpredis/archive/3.1.3.tar.gz
+curl -L -O https://github.com/phpredis/phpredis/archive/3.1.3.tar.gz
 tar zxf 3.1.3.tar.gz phpredis-3.1.3
 cd phpredis-3.1.3
 phpize
