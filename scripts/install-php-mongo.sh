@@ -7,9 +7,10 @@ then
    exit 0
 fi
 
-sudo apt-get install pkg-config
-
 touch /home/vagrant/.php-mongo
+
+echo "installing pkg-config"
+sudo apt-get install pkg-config
 
 echo "upgrading nginx binary"
 sudo /etc/init.d/nginx upgrade
