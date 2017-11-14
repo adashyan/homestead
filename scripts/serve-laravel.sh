@@ -30,8 +30,6 @@ block="server {
     location / {
         try_files \$uri \$uri/ /index.php?\$query_string;
     }
-    # include specific conf files from the root
-    include ${DOCUMENT_ROOT}*.conf;
     
     location = /favicon.ico { access_log off; log_not_found off; }
     location = /robots.txt  { access_log off; log_not_found off; }
@@ -62,6 +60,9 @@ block="server {
         fastcgi_param APPLICATION_ENV "development";
     }
 
+    # include specific conf files from the root
+    include ${DOCUMENT_ROOT}*.conf;
+    
     location ~ /\.ht {
         deny all;
     }
